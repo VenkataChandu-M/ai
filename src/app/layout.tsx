@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'BizCatalyst - All-in-One Business Platform',
-  description: 'Enterprise CRM, Analytics, Campaigns, and Scheduling platform.',
+  title: 'BizCatalyst — AI-Powered Business OS',
+  description: 'The all-in-one AI-powered enterprise platform for CRM, Marketing, Analytics, and Scheduling. Replace 5+ SaaS tools with one intelligent platform.',
 };
 
 export default function RootLayout({
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-background antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans min-h-screen bg-background antialiased`}>
         {children}
       </body>
     </html>
