@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, Users, BarChart3, Mail, Calendar, Settings, LogOut, Sparkles } from 'lucide-react';
+import { Home, Users, BarChart3, Mail, Calendar, Settings, LogOut, Sparkles, Shield } from 'lucide-react';
 
 export function DashboardSidebar() {
   return (
@@ -58,13 +58,20 @@ export function DashboardSidebar() {
         </div>
         <div className="mt-auto p-4 border-t">
           <Link
+            href="/admin"
+            className="flex items-center gap-3 rounded-lg px-3 py-2 text-destructive transition-all hover:bg-destructive/10 font-medium mb-1"
+          >
+            <Shield className="h-4 w-4" />
+            Admin Panel
+          </Link>
+          <Link
             href="/settings"
             className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
           >
             <Settings className="h-4 w-4" />
             Settings
           </Link>
-          <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-destructive transition-all hover:bg-destructive/10">
+          <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-muted mt-1">
             <LogOut className="h-4 w-4" />
             Logout
           </button>
