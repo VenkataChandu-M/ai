@@ -1,6 +1,20 @@
+"use client";
+
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function RegisterPage() {
+  const router = useRouter();
+
+  const handleDemoRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate API delay
+    setTimeout(() => {
+      // For the hackathon demo, bypass real auth and go straight to the dashboard
+      router.push('/dashboard');
+    }, 500);
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8 bg-card p-8 rounded-xl border shadow-sm">
@@ -14,7 +28,7 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" action="/auth/register" method="POST">
+        <form className="mt-8 space-y-6" onSubmit={handleDemoRegister}>
           <div className="space-y-4 rounded-md shadow-sm">
             <div>
               <label htmlFor="full_name" className="sr-only">Full Name</label>

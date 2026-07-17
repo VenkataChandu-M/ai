@@ -37,10 +37,10 @@ export async function updateSession(request: NextRequest) {
   const isProtectedRoute = request.nextUrl.pathname.startsWith('/dashboard') || request.nextUrl.pathname.startsWith('/admin')
 
   if (!user && isProtectedRoute) {
-    // no user, redirect to login
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
-    return NextResponse.redirect(url)
+    // [HACKATHON DEMO] - Bypassing strict auth to allow judges to view the dashboard
+    // const url = request.nextUrl.clone()
+    // url.pathname = '/login'
+    // return NextResponse.redirect(url)
   }
 
   if (user && isAuthRoute) {
