@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizCatalyst Campaign Generator — Create and launch multi-channel marketing campaigns with AI-powered content and targeting.">
+  <title>Campaign Generator — BizCatalyst</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <span class="brand-icon">⚡</span>
+        BizCatalyst
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="../index.html#catalogs">Catalogs</a></li>
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#pricing">Pricing</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="#" class="btn btn-outline">Log In</a>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero page-hero" style="min-height: auto; padding: 120px 0 60px;">
+    <div class="hero-orb hero-orb--2" style="opacity: 0.1;"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        For Marketers · Live Data
+      </div>
+      <h1>
+        <span class="gradient-text">Campaign</span> Dashboard
+      </h1>
+      <p>Create, manage, and track multi-channel marketing campaigns with real-time performance insights.</p>
+      <div class="hero-buttons">
+        <a href="#addCampaignSection" class="btn btn-primary">+ New Campaign</a>
+        <a href="../index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Summary Metrics -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+    <div class="container">
+      <div id="campaignsSummary" class="metrics-grid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading summary...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Campaign Form -->
+  <section class="section" id="addCampaignSection" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="form-card">
+        <h3 class="form-title">🚀 Create New Campaign</h3>
+        <form id="addCampaignForm" class="dashboard-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="campaignName">Campaign Name *</label>
+              <input type="text" id="campaignName" name="name" placeholder="Summer Product Launch" required>
+            </div>
+            <div class="form-group">
+              <label for="campaignChannel">Channel</label>
+              <select id="campaignChannel" name="channel">
+                <option value="email">📧 Email</option>
+                <option value="social">📱 Social Media</option>
+                <option value="sms">💬 SMS</option>
+                <option value="ads">📢 Ads</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="campaignBudget">Budget ($)</label>
+              <input type="number" id="campaignBudget" name="budget" placeholder="5000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label for="campaignDate">Start Date</label>
+              <input type="date" id="campaignDate" name="start_date">
+            </div>
+            <div class="form-group form-actions-group">
+              <button type="submit" class="btn btn-primary">Launch Campaign</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaigns Grid -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <h3 class="dashboard-section-title">📊 All Campaigns</h3>
+      <div id="campaignsGrid" class="campaigns-grid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading campaigns...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 BizCatalyst. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Home</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/campaigns-data.js"></script>
+</body>
+</html>

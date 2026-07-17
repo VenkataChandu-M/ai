@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizCatalyst Analytics — Real-time dashboards, custom reports, and actionable insights to drive data-informed decisions.">
+  <title>Analytics — BizCatalyst</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <span class="brand-icon">⚡</span>
+        BizCatalyst
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="../index.html#catalogs">Catalogs</a></li>
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#pricing">Pricing</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="#" class="btn btn-outline">Log In</a>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero page-hero" style="min-height: auto; padding: 120px 0 60px;">
+    <div class="hero-orb hero-orb--3" style="opacity: 0.1;"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        For Analysts · Live Data
+      </div>
+      <h1>
+        <span class="gradient-text">Analytics</span> Dashboard
+      </h1>
+      <p>Real-time metrics, visual charts, and actionable insights across your entire business — powered by live database data.</p>
+      <div class="hero-buttons">
+        <a href="#metricsSection" class="btn btn-primary">View Metrics</a>
+        <a href="../index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Summary -->
+  <section class="section" id="metricsSection" style="padding-top: 2rem; padding-bottom: 1rem;">
+    <div class="container">
+      <h3 class="dashboard-section-title">📊 Key Metrics</h3>
+      <div id="analyticsMetrics" class="metrics-grid metrics-grid-6">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading metrics...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <h3 class="dashboard-section-title">📈 Visual Reports</h3>
+      <div id="analyticsCharts" class="charts-grid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading charts...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 BizCatalyst. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Home</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/analytics-data.js"></script>
+</body>
+</html>

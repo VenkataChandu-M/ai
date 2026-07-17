@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizCatalyst CRM — Manage contacts, deals, and pipelines. Track every customer interaction and close more deals.">
+  <title>CRM — BizCatalyst</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <span class="brand-icon">⚡</span>
+        BizCatalyst
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="../index.html#catalogs">Catalogs</a></li>
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#pricing">Pricing</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="#" class="btn btn-outline">Log In</a>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero page-hero" style="min-height: auto; padding: 120px 0 60px;">
+    <div class="hero-orb hero-orb--1" style="opacity: 0.1;"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        For Sales Teams · Live Data
+      </div>
+      <h1>
+        <span class="gradient-text">CRM</span> Dashboard
+      </h1>
+      <p>Manage your contacts, track deals through the pipeline, and build stronger customer relationships — all in real time.</p>
+      <div class="hero-buttons">
+        <a href="#addContactSection" class="btn btn-primary">+ Add Contact</a>
+        <a href="../index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Contact Form -->
+  <section class="section" id="addContactSection" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="form-card">
+        <h3 class="form-title">➕ Add New Contact</h3>
+        <form id="addContactForm" class="dashboard-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="full_name">Full Name *</label>
+              <input type="text" id="full_name" name="full_name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Acme Inc">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1-555-0100">
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" name="status">
+                <option value="lead">Lead</option>
+                <option value="customer">Customer</option>
+                <option value="churned">Churned</option>
+              </select>
+            </div>
+            <div class="form-group form-actions-group">
+              <button type="submit" class="btn btn-primary">Add Contact</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts Table -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <h3 class="dashboard-section-title">📋 All Contacts</h3>
+      <div id="contactsTable">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading contacts...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals Pipeline -->
+  <section class="section">
+    <div class="container">
+      <h3 class="dashboard-section-title">🎯 Deal Pipeline</h3>
+      <div id="dealsGrid" class="pipeline-grid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading deals...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 BizCatalyst. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Home</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/crm-data.js"></script>
+</body>
+</html>

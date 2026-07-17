@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizCatalyst — The all-in-one business platform with CRM, Campaign Generator, Analytics, and Schedule Management. Empower every team in your organization.">
+  <title>BizCatalyst — All-in-One Business Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-icon">⚡</span>
+        BizCatalyst
+      </a>
+
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="#catalogs">Catalogs</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="#" class="btn btn-outline" id="loginBtn">Log In</a>
+        <a href="#" class="btn btn-primary" id="signupBtn">Get Started</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
+
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Now in Public Beta — Join 2,000+ businesses
+      </div>
+
+      <h1>
+        Grow Your Business<br>
+        With <span class="gradient-text">One Platform</span>
+      </h1>
+
+      <p>
+        CRM, campaigns, analytics, and scheduling — everything your team needs 
+        to attract, engage, and retain customers. Built for modern businesses.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#catalogs" class="btn btn-primary" id="heroCtaExplore">
+          Explore Catalogs
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn btn-outline" id="heroCtaLearn">
+          See How It Works
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number" data-count="2500">0</div>
+          <div class="label">Active Businesses</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" data-count="98">0</div>
+          <div class="label">Satisfaction Rate %</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" data-count="4">0</div>
+          <div class="label">Powerful Modules</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" data-count="24">0</div>
+          <div class="label">7 Support Hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUSTED BY (Marquee) ===== -->
+  <section class="marquee-section">
+    <div class="marquee-label">Trusted by industry leaders worldwide</div>
+    <div class="marquee-track">
+      <span class="marquee-item">🏢 Acme Corp</span>
+      <span class="marquee-item">🚀 LaunchPad Inc</span>
+      <span class="marquee-item">📊 DataForge</span>
+      <span class="marquee-item">🎯 TargetFlow</span>
+      <span class="marquee-item">💼 VentureStack</span>
+      <span class="marquee-item">🌐 GlobalReach</span>
+      <span class="marquee-item">⚙️ TechNova</span>
+      <span class="marquee-item">📈 ScaleUp AI</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item">🏢 Acme Corp</span>
+      <span class="marquee-item">🚀 LaunchPad Inc</span>
+      <span class="marquee-item">📊 DataForge</span>
+      <span class="marquee-item">🎯 TargetFlow</span>
+      <span class="marquee-item">💼 VentureStack</span>
+      <span class="marquee-item">🌐 GlobalReach</span>
+      <span class="marquee-item">⚙️ TechNova</span>
+      <span class="marquee-item">📈 ScaleUp AI</span>
+    </div>
+  </section>
+
+  <!-- ===== CATALOG CARDS ===== -->
+  <section class="section" id="catalogs">
+    <div class="container text-center">
+      <span class="section-label reveal">📦 Our Catalogs</span>
+      <h2 class="section-title reveal">Choose Your <span class="gradient-text">Business Module</span></h2>
+      <p class="section-subtitle mx-auto reveal">
+        Four powerful catalogs designed for different teams. Pick what fits your workflow, or use them all together.
+      </p>
+
+      <div class="catalogs-grid">
+        <!-- CRM -->
+        <a href="pages/crm.html" class="catalog-card reveal" id="cardCrm">
+          <div class="card-persona">For Sales Teams</div>
+          <div class="catalog-card-icon crm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>CRM</h3>
+          <p>Manage contacts, deals, and pipelines. Track every customer interaction and close more deals.</p>
+          <span class="card-link">Explore CRM →</span>
+        </a>
+
+        <!-- Campaign Generator -->
+        <a href="pages/campaigns.html" class="catalog-card reveal" id="cardCampaigns">
+          <div class="card-persona">For Marketers</div>
+          <div class="catalog-card-icon campaigns">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Campaign Generator</h3>
+          <p>Create and launch multi-channel marketing campaigns with AI-powered content and targeting.</p>
+          <span class="card-link">Explore Campaigns →</span>
+        </a>
+
+        <!-- Analytics -->
+        <a href="pages/analytics.html" class="catalog-card reveal" id="cardAnalytics">
+          <div class="card-persona">For Analysts</div>
+          <div class="catalog-card-icon analytics">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Analytics</h3>
+          <p>Real-time dashboards, custom reports, and actionable insights to drive data-informed decisions.</p>
+          <span class="card-link">Explore Analytics →</span>
+        </a>
+
+        <!-- Schedule Management -->
+        <a href="pages/schedule.html" class="catalog-card reveal" id="cardSchedule">
+          <div class="card-persona">For Operations</div>
+          <div class="catalog-card-icon schedule">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Schedule Management</h3>
+          <p>Team calendars, appointment booking, and automated reminders to keep your operations running smoothly.</p>
+          <span class="card-link">Explore Scheduling →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features" style="background: var(--color-bg-alt);">
+    <div class="container text-center">
+      <span class="section-label reveal">✨ Features</span>
+      <h2 class="section-title reveal">Why Businesses <span class="gradient-text">Love Us</span></h2>
+      <p class="section-subtitle mx-auto reveal">
+        Built from the ground up for modern teams, with enterprise-grade security and simplicity.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon">🔒</div>
+          <div>
+            <h4>Enterprise Security</h4>
+            <p>SOC 2 compliant with end-to-end encryption, SSO, and role-based access controls.</p>
+          </div>
+        </div>
+
+        <div class="feature-item reveal">
+          <div class="feature-icon">⚡</div>
+          <div>
+            <h4>Lightning Fast</h4>
+            <p>Sub-second load times and real-time sync across all your devices and team members.</p>
+          </div>
+        </div>
+
+        <div class="feature-item reveal">
+          <div class="feature-icon">🤖</div>
+          <div>
+            <h4>AI-Powered</h4>
+            <p>Smart suggestions, automated workflows, and predictive analytics built right in.</p>
+          </div>
+        </div>
+
+        <div class="feature-item reveal">
+          <div class="feature-icon">🔗</div>
+          <div>
+            <h4>Seamless Integrations</h4>
+            <p>Connect with 200+ tools including Slack, Zapier, Google Workspace, and more.</p>
+          </div>
+        </div>
+
+        <div class="feature-item reveal">
+          <div class="feature-icon">📱</div>
+          <div>
+            <h4>Mobile Ready</h4>
+            <p>Full-featured mobile apps for iOS and Android. Manage your business on the go.</p>
+          </div>
+        </div>
+
+        <div class="feature-item reveal">
+          <div class="feature-icon">📊</div>
+          <div>
+            <h4>Custom Dashboards</h4>
+            <p>Drag-and-drop dashboard builder with 50+ widget types and real-time data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="how-it-works">
+    <div class="container text-center">
+      <span class="section-label reveal">🚀 How It Works</span>
+      <h2 class="section-title reveal">Up and Running in <span class="gradient-text">3 Steps</span></h2>
+      <p class="section-subtitle mx-auto reveal">
+        Get started in minutes, not months. No complex setup or technical expertise required.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Choose Your Catalogs</h3>
+          <p>Select the modules that fit your business needs — CRM, Campaigns, Analytics, or Scheduling.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Configure & Customize</h3>
+          <p>Set up your workspace with custom fields, workflows, and team permissions in a few clicks.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Launch & Grow</h3>
+          <p>Start using your tools immediately. Invite your team and watch productivity soar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section" id="testimonials" style="background: var(--color-bg-alt);">
+    <div class="container text-center">
+      <span class="section-label reveal">💬 Testimonials</span>
+      <h2 class="section-title reveal">Loved by <span class="gradient-text">Teams Everywhere</span></h2>
+      <p class="section-subtitle mx-auto reveal">
+        See what business leaders are saying about BizCatalyst.
+      </p>
+
+      <div class="testimonials-wrapper reveal">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"BizCatalyst's CRM transformed our sales process. We closed 40% more deals in the first quarter. The pipeline visibility alone is worth it."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SR</div>
+              <div class="testimonial-author-info">
+                <h5>Sarah Rodriguez</h5>
+                <span>VP of Sales, LaunchPad Inc</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"The Campaign Generator is a game-changer. We launch campaigns in hours instead of weeks, and the AI-powered targeting doubled our ROI."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MK</div>
+              <div class="testimonial-author-info">
+                <h5>Marcus Kim</h5>
+                <span>CMO, DataForge</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"Finally, analytics that make sense. The dashboards are intuitive, and the real-time insights helped us cut costs by 25% in six months."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AP</div>
+              <div class="testimonial-author-info">
+                <h5>Anika Patel</h5>
+                <span>Head of Analytics, TargetFlow</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"Schedule Management has been a lifesaver for our remote team. Automated reminders and shared calendars keep everyone in sync."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JL</div>
+              <div class="testimonial-author-info">
+                <h5>James Liu</h5>
+                <span>Operations Director, ScaleUp AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-dots" id="testimonialDots">
+          <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+          <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section" id="pricing">
+    <div class="container text-center">
+      <span class="section-label reveal">💰 Pricing</span>
+      <h2 class="section-title reveal">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+      <p class="section-subtitle mx-auto reveal">
+        No hidden fees. Start free, scale as you grow.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card reveal" id="pricingStarter">
+          <h3>Starter</h3>
+          <div class="price">$0<span>/mo</span></div>
+          <p class="price-desc">Perfect for solo entrepreneurs</p>
+          <ul class="pricing-features">
+            <li>1 Catalog module</li>
+            <li>Up to 500 contacts</li>
+            <li>Basic analytics</li>
+            <li>Email support</li>
+            <li>5 GB storage</li>
+          </ul>
+          <a href="#" class="btn btn-outline" id="pricingStarterBtn">Start Free</a>
+        </div>
+
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured reveal" id="pricingPro">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Pro</h3>
+          <div class="price">$49<span>/mo</span></div>
+          <p class="price-desc">Best for growing teams</p>
+          <ul class="pricing-features">
+            <li>All 4 Catalog modules</li>
+            <li>Unlimited contacts</li>
+            <li>Advanced analytics & reports</li>
+            <li>Priority support</li>
+            <li>50 GB storage</li>
+            <li>AI-powered features</li>
+            <li>API access</li>
+          </ul>
+          <a href="#" class="btn btn-primary" id="pricingProBtn">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card reveal" id="pricingEnterprise">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="price-desc">For large organizations</p>
+          <ul class="pricing-features">
+            <li>Everything in Pro</li>
+            <li>Dedicated account manager</li>
+            <li>Custom integrations</li>
+            <li>SLA guarantee</li>
+            <li>Unlimited storage</li>
+            <li>SSO & advanced security</li>
+            <li>On-premise option</li>
+          </ul>
+          <a href="#" class="btn btn-outline" id="pricingEnterpriseBtn">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Join 2,500+ companies already growing with BizCatalyst. Start your free trial today.</p>
+        <a href="#" class="btn" id="finalCtaBtn">
+          Get Started for Free
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="navbar-brand">
+            <span class="brand-icon">⚡</span>
+            BizCatalyst
+          </a>
+          <p>The all-in-one business platform for modern teams. CRM, campaigns, analytics, and scheduling — unified.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter" id="socialTwitter">𝕏</a>
+            <a href="#" aria-label="LinkedIn" id="socialLinkedin">in</a>
+            <a href="#" aria-label="GitHub" id="socialGithub">⌨</a>
+            <a href="#" aria-label="YouTube" id="socialYoutube">▶</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="pages/crm.html">CRM</a></li>
+            <li><a href="pages/campaigns.html">Campaigns</a></li>
+            <li><a href="pages/analytics.html">Analytics</a></li>
+            <li><a href="pages/schedule.html">Scheduling</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BizCatalyst. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/home-data.js"></script>
+</body>
+</html>

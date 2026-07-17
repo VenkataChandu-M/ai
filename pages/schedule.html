@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizCatalyst Schedule Management — Team calendars, appointment booking, and automated reminders to keep your operations running smoothly.">
+  <title>Schedule Management — BizCatalyst</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <span class="brand-icon">⚡</span>
+        BizCatalyst
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="../index.html#catalogs">Catalogs</a></li>
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#pricing">Pricing</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="#" class="btn btn-outline">Log In</a>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero page-hero" style="min-height: auto; padding: 120px 0 60px;">
+    <div class="hero-orb hero-orb--1" style="opacity: 0.08; background: var(--color-success);"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        For Operations · Live Data
+      </div>
+      <h1>
+        <span class="gradient-text">Schedule</span> Manager
+      </h1>
+      <p>Team calendars, appointment booking, and automated reminders — keep your entire operation running like clockwork.</p>
+      <div class="hero-buttons">
+        <a href="#addEventSection" class="btn btn-primary">+ New Event</a>
+        <a href="../index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Summary -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+    <div class="container">
+      <div id="scheduleSummary" class="metrics-grid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading summary...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Event Form -->
+  <section class="section" id="addEventSection" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="form-card">
+        <h3 class="form-title">📅 Schedule New Event</h3>
+        <form id="addEventForm" class="dashboard-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="eventTitle">Event Title *</label>
+              <input type="text" id="eventTitle" name="title" placeholder="Team Standup" required>
+            </div>
+            <div class="form-group">
+              <label for="eventDate">Date *</label>
+              <input type="date" id="eventDate" name="event_date" required>
+            </div>
+            <div class="form-group">
+              <label for="eventTime">Time</label>
+              <input type="time" id="eventTime" name="event_time" value="09:00">
+            </div>
+            <div class="form-group">
+              <label for="eventDuration">Duration (min)</label>
+              <input type="number" id="eventDuration" name="duration_min" value="30" min="5" step="5">
+            </div>
+            <div class="form-group">
+              <label for="eventAttendees">Attendees</label>
+              <input type="text" id="eventAttendees" name="attendees" placeholder="Team members...">
+            </div>
+            <div class="form-group">
+              <label for="eventLocation">Location</label>
+              <input type="text" id="eventLocation" name="location" placeholder="Zoom / Room A">
+            </div>
+            <div class="form-group form-actions-group">
+              <button type="submit" class="btn btn-primary">Create Event</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Timeline -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <h3 class="dashboard-section-title">📆 Events Timeline</h3>
+      <div id="eventsTimeline">
+        <div class="loading-spinner"><div class="spinner"></div><p>Loading events...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 BizCatalyst. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Home</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/schedule-data.js"></script>
+</body>
+</html>
