@@ -1,0 +1,52 @@
+<!-- ===== FLOATING AI CHAT WIDGET ===== -->
+<div class="ai-widget-container" id="aiWidget">
+  <button class="ai-widget-toggle" id="aiToggle" aria-label="Open AI Assistant">
+    <span class="ai-icon">✨</span>
+    <span class="ai-badge-live">AI</span>
+  </button>
+
+  <div class="ai-chat-window" id="aiChatWindow">
+    <div class="ai-chat-header">
+      <div class="ai-chat-title">
+        <span class="ai-avatar">🤖</span>
+        <div>
+          <h4>BizCatalyst Copilot</h4>
+          <span class="ai-status-text" id="aiStatus">Loading local LLM...</span>
+        </div>
+      </div>
+      <button class="ai-chat-close" id="aiClose" aria-label="Close Chat">×</button>
+    </div>
+
+    <div class="ai-model-selector-bar">
+      <label for="modelSelect">Model:</label>
+      <select id="modelSelect">
+        <option value="xenova-qwen">Qwen 1.5B (Fast, Browser Local)</option>
+        <option value="xenova-gpt2">GPT-2 (Ultralight, Instant)</option>
+      </select>
+    </div>
+
+    <div class="ai-chat-messages" id="aiMessages">
+      <div class="ai-message system">
+        Hello! I am your local BizCatalyst Assistant. I can search through your **contacts, deals, campaigns, and schedule events** and execute queries completely offline and local to your browser.
+      </div>
+      <div class="ai-message system-info" id="modelLoadingProgress" style="display: none;">
+        Downloading local model to your browser cache... <span id="progressPercent">0%</span>
+        <div class="progress-bar-container"><div class="progress-bar" id="loadProgressBar" style="width: 0%"></div></div>
+      </div>
+    </div>
+
+    <div class="ai-chat-suggestions" id="aiSuggestions">
+      <button class="suggestion-pill" data-query="Find customer contacts">👥 Customers</button>
+      <button class="suggestion-pill" data-query="List upcoming events">📅 Events</button>
+      <button class="suggestion-pill" data-query="Summary of campaign budget">💰 Campaign Budgets</button>
+      <button class="suggestion-pill" data-query="Show sales won">🎉 Deals Won</button>
+    </div>
+
+    <form class="ai-chat-input-area" id="aiInputForm">
+      <input type="text" id="aiInput" placeholder="Ask local Copilot anything..." required autocomplete="off">
+      <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Send Message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+</div>

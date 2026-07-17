@@ -6,6 +6,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---------- Inject & Initialize Local AI Assistant ----------
+  injectAIAssistant();
+
+  async function injectAIAssistant() {
+    const isSubPage = window.location.pathname.includes('/pages/');
+    const basePath = isSubPage ? '../' : './';
+
+    try {
+      const response = await fetch(`${basePath}components/ai-assistant.html`);
+      if (!response.ok) return;
+      const html = await response.text();
+      
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      document.body.appendChild(div.firstElementChild);
+
+      // Dynamically load the RAG engine script
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = `${basePath}js/local-ai-rag.js`;
+      document.body.appendChild(script);
+    } catch (err) {
+      console.error('Failed to inject AI assistant:', err);
+    }
+  }
+
   // ---------- Navbar Scroll Effect ----------
   const navbar = document.getElementById('navbar');
   let lastScroll = 0;
