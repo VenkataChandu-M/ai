@@ -71,7 +71,7 @@ export default function DashboardPage() {
                 <strong>Insight:</strong> 3 deals are stuck in negotiation. Consider sending a follow-up email with the Q3 discount code.
               </div>
               <div className="p-3 bg-primary/10 text-primary rounded-md text-sm">
-                <strong>Insight:</strong> Your 'Tech Conf Sponsorship' campaign generated 120 leads. Time to assign them to sales reps.
+                <strong>Insight:</strong> Your &apos;Tech Conf Sponsorship&apos; campaign generated 120 leads. Time to assign them to sales reps.
               </div>
             </div>
           </CardContent>
